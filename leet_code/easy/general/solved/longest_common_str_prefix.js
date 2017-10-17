@@ -6,7 +6,7 @@ var longestCommonPrefix = function(strs) {
 
   let longestIndex = matchingCharsIndex(strs[0], strs[1]);
 
-  for (let i = 2; i < strs.length; i++) {
+  for (let i = 2; i < strs.length && longestIndex !== 0; i++) {
     let currentIndex = matchingCharsIndex(strs[i - 1], strs[i]);
     longestIndex = (currentIndex < longestIndex) ? currentIndex : longestIndex;
   }
@@ -29,14 +29,3 @@ console.log(longestCommonPrefix(['abicbt', 'abicep', 'abicedi', 'abiciope']));  
 console.log(longestCommonPrefix(['abicet', 'abicepiabc', 'abicdibc', 'abiciope', 'abi']));      // 'abi'
 console.log(longestCommonPrefix(['a']));                                          // 'a'
 console.log(longestCommonPrefix(['']));                                           // ''
-
-
-  // strs[0]
-  // outer iteration starts 1
-  //   index state start strs[0], strs[1]
-  //   if index < index reassign
-
-  // return slice
-
-  // function check index
-  //   inner iteration if strs0 === strs1 index +

@@ -6,13 +6,21 @@ oct 17th    x1. interview cake hash tables
 
 oct 18th  
             x1. finsih up closures
-            2. interview bit hash tables
-            3. cracking the coding interview: p 88 hash tables
-            4. interview cake problems (2) hash tables
-            5. rithm review
+            x2. interview bit hash tables
+            x3. interview bit problems (1) hash tables
+            x4. interview cake javaScript interview problems (2)
+            x5. leet code general (2)
 
             make closure timmer
             write closures exercises
+
+oct 19th  
+            1. interview cake logarithms
+            2. interview cake Big O notation (review)
+            3. interview bit Time complexity
+            4. interview cake interview problems
+            5. cracking the coding interview Big O notation
+            6. interview cake problems () hash tables
 
 
 linked Lists

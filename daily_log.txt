@@ -1,0 +1,19 @@
+start with interview cake by choosing a concept from the glossary
+
+oct 17th    x1. interview cake hash tables
+            x2. leet code : practice writing on paper 'two sum' hash tables
+            x3. interview cake problems (2) hash tables
+
+oct 18th  
+            x1. finsih up closures
+            2. interview bit hash tables
+            3. cracking the coding interview: p 88 hash tables
+            4. interview cake problems (2) hash tables
+            5. rithm review
+
+            make closure timmer
+            write closures exercises
+
+
+linked Lists
+  leet code : code 'merge two sorted lists'

@@ -19,7 +19,7 @@ oct 19th
             x2. interview bit Time complexity
             (1/2)3. interview cake logrithms
             4. leet code general
-            5. hacker rank (1)
+            x5. hacker rank (2)
             6. cracking the coding interview Big O notation
             7. 36 essiential javaScript interview questions
 

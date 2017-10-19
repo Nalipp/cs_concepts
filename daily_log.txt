@@ -10,18 +10,21 @@ oct 18th
             x3. interview bit problems (1) hash tables
             x4. interview cake javaScript interview problems (2)
             x5. leet code general (2)
+            x6. make closure timmer
 
-            make closure timmer
-            write closures exercises
+            xwrite closures exercises
+
+oct 19th  
+            x1. interview cake Big O notation (review)
+            x2. interview bit Time complexity
+            (1/2)3. interview cake logrithms
+            4. leet code general
+            5. hacker rank (1)
+            6. cracking the coding interview Big O notation
+            7. 36 essiential javaScript interview questions
+
+            the keyword 'this'
+
 
 oct 19th  
             1. interview cake logarithms
-            2. interview cake Big O notation (review)
-            3. interview bit Time complexity
-            4. interview cake interview problems
-            5. cracking the coding interview Big O notation
-            6. interview cake problems () hash tables
-
-
-linked Lists
-  leet code : code 'merge two sorted lists'

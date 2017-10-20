@@ -16,15 +16,20 @@ oct 18th
 
 oct 19th  
             x1. interview cake Big O notation (review)
-            x2. interview bit Time complexity
+            (1/2)2. interview bit Time complexity
             (1/2)3. interview cake logrithms
-            4. leet code general
+            x4. leet code general (1)
             x5. hacker rank (2)
-            6. cracking the coding interview Big O notation
-            7. 36 essiential javaScript interview questions
 
             the keyword 'this'
 
 
 oct 19th  
             1. interview cake logarithms
+            2. cracking the coding interview Big O notation
+            3. interview bit Time complexity (problems)
+            4. 36 essiential javaScript interview questions
+            5. leet code general
+            6. hacker rank
+
+            the keyword 'this'

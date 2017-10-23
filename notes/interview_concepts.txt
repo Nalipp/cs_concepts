@@ -1,0 +1,17 @@
+****************************************************************************************************
+interview questions
+
+****************************************************************************************************
+
+web development questions
+  how does a website work?
+  primitive values
+  static vs dynamic languages
+  strictly typed vs loosely typed languages
+  what are the different ways to hide an element on the screen
+  what is garbage collection
+
+javaScript questions
+  what is prototype inheritence?
+  what are closures?
+

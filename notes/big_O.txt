@@ -1,0 +1,48 @@
+****************************************************************************************************
+Big O notation
+
+  what is it?
+
+  Compares efficiency of space and time
+  A way to compare the theroretical amount of time a program will run.
+  Constants and smaller components are ignored.
+  we are usually taking about the worst case, it is implied
+  asymptotic complexities of common runtimes 
+  analyzing the runtime of different algorythms
+  bit O just measures how quickly something scales and does not try to measure every aspect of how much time it will take
+
+  what is the difference between time complexity and space complexity?
+    time complexity measures the theoretical time a program needs to run
+    space complexity measures the amount of space in memory a protram needs to run
+
+
+  O(1)        constant time
+              the size of the inputs dosen't matter, a set number of operations will always happen regardless of inputs
+
+  O(n)        linear time 
+              a data set is iterated over
+              the size of the inputs or data set affects how many times an iteration is run
+
+  O(n**2)     quadratic time 
+              nested loops
+              runs an iteration inside of an iteration
+              n**3 is three nested loops ect
+              if a loop is constant time it is not count as additional loops so two loops could still be O(n) (as long as they are not nested)
+
+  O(log(n))   
+
+
+  O(nlog(n))  
+
+  O(n**n)
+
+  ************************************************** 
+  amoritized time
+
+    when a specific senario happens ocasionally but is not expected to happen again for a long time
+      example: insertions -> when inserting into an array and the array runs out of space, it needs to copy itself to an new array that is doubled in size
+               it only happens when the array is full and most of the time it is not
+               the cost is 'amoritized'
+               insertions take O(n**2) as worst case
+               but the amoritized time is O(n) because most of the time the array is not being doubled and coppied
+               

@@ -1,0 +1,21 @@
+****************************************************************************************************
+Recursion
+
+  what is it?
+
+  Recursion is a where a function calles itself
+  Key feature of recursion is that there must be a base case
+  When using recursion you also must pay close attention to the call stack
+
+  what happens if you don't have a base case?
+    You will keep adding a requst to the call stack until you run out of memory and the stack overflows
+
+  recursion is often used with deeply nested objects
+
+
+  helper method recursion
+
+    a recursive function inside of a recursive function 
+      that takes a copy (slice()) of the original array and mutates it through recursion
+      see cs_practice_problems/helper_method_recursion.js
+

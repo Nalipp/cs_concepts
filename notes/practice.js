@@ -29,23 +29,28 @@
 // console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1));
 
 
-let printFib = (n) => {
-  let obj = {};
-  for (let i = 0; i < n; i++) {
-    console.log(fib(i, obj));
-  }
-}
+// let printFib = (n) => {
+//   let obj = {};
+//   for (let i = 0; i < n; i++) {
+//     console.log(fib(i, obj));
+//   }
+// }
 
-let fib = (n, obj) => {
-  if (n <= 1) return n;
+// let fib = (n, obj) => {
+//   if (n <= 1) return n;
 
-  if (obj[n]) return obj[n];
+//   if (obj[n]) return obj[n];
   
-  obj[n] = fib(n - 1, obj) + fib(n - 2, obj);
-  return obj[n];
-}
+//   obj[n] = fib(n - 1, obj) + fib(n - 2, obj);
+//   return obj[n];
+// }
 
-// printFib(8, {});
-console.log(fib(8, {}));
+// // printFib(8, {});
+// console.log(fib(8, {}));
 
-// 0 1 1 2 3 5 8 13
+console.log(1 +  "2" + "2");    // '122'
+console.log(1 +  +"2" + "2");   // '32'
+console.log(1 +  -"1" + "2");   // '02'
+console.log(+"1" +  "1" + "2"); // '112'
+console.log( "A" - "B" + "2");  // 'NaN2'
+console.log( "A" - "B" + 2);    // 'NaN'

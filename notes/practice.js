@@ -48,9 +48,18 @@
 // // printFib(8, {});
 // console.log(fib(8, {}));
 
-console.log(1 +  "2" + "2");    // '122'
-console.log(1 +  +"2" + "2");   // '32'
-console.log(1 +  -"1" + "2");   // '02'
-console.log(+"1" +  "1" + "2"); // '112'
-console.log( "A" - "B" + "2");  // 'NaN2'
-console.log( "A" - "B" + 2);    // 'NaN'
+
+// function for getting the id of a dom element,
+// giving it a new, unique id if it doesn't have an id yet
+var getUniqueId = (function(){
+  var nextGeneratedId = 0;
+  return function(element) {
+    if (!element.id) {
+      element.id = 'generated-uid-' + nextGeneratedId;
+      nextGeneratedId++;
+    }
+    return element.id;
+  };
+})();
+
+console.log('hi')

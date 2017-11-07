@@ -20,11 +20,13 @@ var Repo = (function() {
       this.last.next = newNode;
       this.last = newNode;
     }
-    this.size++;
-    return this.size;
+    return ++this.size;
   }
 
   Queue.prototype.dequeue = function() {
+    if (!this.first) return null;
+    if (this.first === this.last) this.last = null;
+
     let tmp = this.first;
     this.first = this.first.next;
     this.size--;

@@ -65,25 +65,38 @@ let Repo = (() => {
     }
   }
 
-  BinarySearchTree.prototype.findRecursively = function(nVal) {
-    let cur = this.root;
-    
+  BinarySearchTree.prototype.findRecursively = function(cur=this.root, nVal) {
+    console.log(cur)
     if (cur.value === nVal) return cur;
+    else if (cur.left) findRecursively(cur = cur.left, nVal);
+    else if (cur.right) this.right.findRecursively(cur = cur.right, nVal);
+    else return undefined
+  }
 
-    function find(cur) {
-      if (nVal < cur.value) {
-        if (!cur.left) return undefined;
-        if (cur.left.value === nVal) return cur.left;
-        return find(cur = cur.left);
-      }
-      if (nVal > cur.value) {
-        if (!cur.right) return undefined;
-        if (cur.right.value === nVal) return cur.right;
-        return find(cur = cur.right);
-      }
-    }
+  BinarySearchTree.prototype.get = function(cur, nVal) {
+    // console.log(nVal);
+    // console.log(cur.value);
+    // console.log(cur.value === nVal); 
 
-    return find(cur);
+    // // return cur;
+
+    // if (cur.value === nVal) return '&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)a'
+    // else if (cur.left) this.get(cur = cur.left, nVal);
+    // else if (cur.right) this.get(cur = cur.right, nVal);
+    // else return undefined;
+
+
+
+    // if (nVal < cur.value) {
+    //   if (!cur.left) return undefined;
+    //   if (cur.left.value === nVal) return cur.left;
+    //   return this.get(cur = cur.left);
+    // }
+    // if (nVal > cur.value) {
+    //   if (!cur.right) return undefined;
+    //   if (cur.right.value === nVal) return cur.right;
+    //   return this.get(cur = cur.right);
+    // }
   }
 
   BinarySearchTree.prototype.findIteratively = function(nVal) {

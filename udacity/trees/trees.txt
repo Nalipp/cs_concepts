@@ -37,19 +37,19 @@ parrent       -> a parent can also be a child, a child can also be a parent
 
     DFS examples
       Pre-order traversal   -> check as you go
-                                 check off nodes before(pre) you see their children (some algorithms check off the parent after you see the child)
+                                 check off nodes before(pre) you see their children
                                  traditionally you would start at the root(check if off), and choose the left most child node(check if off) 
                                    and continue down to the leaf node(check it off) and go to the parent(already checked) and traverse to any 
                                    additional child nodes before going back up in search of any other child nodes that haven't been checked
       In-order traversal    -> moves through the leftmost node to the right
                                  also starts at the root but traverses down until reaching a leaf(check off the leaf) and then move to it's 
-                                   parrent(check it off) and then move to the next leaf node without checking off any parents in between 
+                                   parrent(check it off) and then move to the next leaf node skipping any parents in between 
                                    checks off the first leaf, then parent, then aditional leaves, but doesn't check of a parrent's parent
                                    until the leaf level(or decendent levels) are fully checked off
 
-      Post order traversal  -> won't be able to check off a node until you have seen all of it's decendends
+      Post-order traversal  -> checks off a node after seeing all of it's decendends
                                  this means the root node is checked last
-                                 begin at the root node but don't check it off, check of the first found leaf move to it's
+                                 begin at the root node but don't check it off, check off the first found leaf move to it's
                                  parent but don't check it off until all of the decendents have been checked
                                  once all of the left nodes are checked find the next leaf and work back up until everything is check(the root is last)
 

@@ -1,0 +1,90 @@
+****************************************************************************************************
+trees
+
+  trees are esentailly a linked list but instead of being linear a node can point to multiple nodes
+  trees are confusing because the higher the node the lower it appears on the page when written (a leaf is the highest node but written lowest on the page)
+    levels are measured from the highest ancestor, the root(1), down the page(up the tree) to the leaf(3) which is the number of edges plus one
+  when measuring the level of a node you add one to the number of edges(connections), heights do not get plus one
+  height(number of edges to the leaf) is the inverse of depth(number of edges from the node to the root)
+    height -> distance to leaf
+    depth  -> distance to the root
+
+edge          -> a connection between two nodes
+path          -> a group of connections (the path between the root and a leaf)
+height        -> each node has its own height which is the number of edges between it and the furthest leaf of the tree
+                   a leaf is height 0, if there are 3 levels the root node would have a height of only 2 
+                     because there are two edges between the root node and the furthest leaf
+tree height   -> the height of the overall tree is the height of the root node (3 levels would be a height of 2)
+depth         -> the number of edges to the root (the inverse of height and still not plus one)
+ancestor      -> is a lower level on the tree from a descendant
+descendant    -> is a higher level on the tree from an ancestor
+leaf          -> are the lowest decendents, a leaf does not have children, a leaf it at the highest level
+external node -> nodes at the highest level (aka leaves) at the end of the tree
+internal node -> nodes that are not at the end of the tree (any node except leaves, a parent node)
+level         -> how many connections it takes to reach the root plus one, the root is level one, level one's children are level 2 etc
+siblings      -> when child nodes at the same level
+child         -> a child node just means belongs to a parrent, a child can only have one parent
+parrent       -> a parent can also be a child, a child can also be a parent
+
+  **************************************************
+  searching (traversing)
+
+    DFS (depth first search) searching from node to leaf first untill all nodes are searched (best to use when you need to search the leaves eariler)
+    BFS (bredth first search) searching all nodes on a level before moving to the next level until you reach the highest (leaf) level last
+
+    BFS examples
+      level order traversal -> is a type of BFS that searches each level from left to right
+
+    DFS examples
+      Pre-order traversal   -> check as you go
+                                 check off nodes before(pre) you see their children (some algorithms check off the parent after you see the child)
+                                 traditionally you would start at the root(check if off), and choose the left most child node(check if off) 
+                                   and continue down to the leaf node(check it off) and go to the parent(already checked) and traverse to any 
+                                   additional child nodes before going back up in search of any other child nodes that haven't been checked
+      In-order traversal    -> moves through the leftmost node to the right
+                                 also starts at the root but traverses down until reaching a leaf(check off the leaf) and then move to it's 
+                                   parrent(check it off) and then move to the next leaf node without checking off any parents in between 
+                                   checks off the first leaf, then parent, then aditional leaves, but doesn't check of a parrent's parent
+                                   until the leaf level(or decendent levels) are fully checked off
+
+      Post order traversal  -> won't be able to check off a node until you have seen all of it's decendends
+                                 this means the root node is checked last
+                                 begin at the root node but don't check it off, check of the first found leaf move to it's
+                                 parent but don't check it off until all of the decendents have been checked
+                                 once all of the left nodes are checked find the next leaf and work back up until everything is check(the root is last)
+
+  **************************************************
+  Binary trees
+
+    Binary trees         -> trees where children have at most two children, nodes can have 0, 1, or 2 children (it is ok for children to be null)
+
+    Perfect trees        -> evey node has exactly two children (except the last level where there can be 1 or 2 leafs)
+                            each level has the capacity to hold 2 to the power of the level (or number of connections)
+                              level 1, 2**0 (1)
+                              level 2, 2**1 (2)
+                              level 3, 2**2 (4)
+                            each new node can have twice as many nodes as the one before it (remember log n)
+                              this allows you to approximate the total number of nodes by level
+
+                              however level 3 does not mean a total count of 8, but you can assume that with four levels you will reach 8
+                              log(7) != 3 / log(8) = 3
+
+    Binary search trees  -> a binary tree with a sorted order
+                            all nodes to the left of a parent node must have values less than the parrent
+                            all nodes to the right are higher than the parent
+    
+    
+    operations
+
+      deleting -> if you are deleting a parent where there is only one child, there is not problem
+                  but if you delete a parent that has multiple children there can be a problem 
+                  if there are multiple children (that could have multiple children)
+                  if order doesn't matter you can replace the deleted parent with a leaf node
+                    this requires search and re-asigning node pointers O(n)
+
+      insertion -> is no problem if there is no order (can be placed anywhere, parent, leaf...) we just have to obey the two children rule
+                   just move down the tree until there is an open spot which means you could travel down until the farthest leaf (worst case) 
+                   which would be the height of the tree
+
+
+

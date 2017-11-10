@@ -98,34 +98,31 @@ describe("#findIteratively", function(){
 
 describe("#findRecursively", function(){
   it("finds a node correctly", function(){
-    binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(22)
-    // var foundNode = binarySearchTree.findRecursively(10)
-    var foundNode = binarySearchTree.findRecursively(22)
-
-    console.log(foundNode);
-    // expect(foundNode.value).to.equal(10)
-    // expect(foundNode.left).to.equal(null)
-    // expect(foundNode.right).to.equal(null)
+    binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(22);
+    var foundNode = binarySearchTree.findRecursively(10);
+    expect(foundNode.value).to.equal(10);
+    expect(foundNode.left).to.equal(null);
+    expect(foundNode.right).to.not.equal(null);
   });
   it("returns undefined if a node is not found", function(){
-    // binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12)
-    // var foundNode = binarySearchTree.findRecursively(120)
-    // expect(foundNode).to.equal(undefined)
+    binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12)
+    var foundNode = binarySearchTree.findRecursively(120)
+    expect(foundNode).to.equal(undefined)
   });
 });
 
-describe("#toArray", function(){
+describe("#toOrderedArray", function(){
   it("returns an array of nodes in correct order", function(){
     binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50)
-
-    expect(binarySearchTree.toArray()).to.deep.equal([1,5,10,12,15,20,50])
+    let arr = binarySearchTree.toOrderedArray();
+    expect(arr).to.deep.equal([1,5,10,12,15,20,50]);
   });
 });
 
 describe("#DFSPreOrder", function(){
   it("returns an array of values found with DFS Pre Order", function(){
-    binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50)
-    expect(binarySearchTree.DFSPreOrder()).to.deep.equal([15, 10, 1, 5, 12, 20, 50])
+//     binarySearchTree.insertIteratively(15).insertIteratively(20).insertIteratively(10).insertIteratively(12).insertIteratively(1).insertIteratively(5).insertIteratively(50)
+//     expect(binarySearchTree.DFSPreOrder()).to.deep.equal([15, 10, 1, 5, 12, 20, 50])
   });
 });
 

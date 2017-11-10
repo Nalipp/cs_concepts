@@ -33,6 +33,18 @@ let BSTRepo = (() => {
     }
   }
 
+  BST.prototype.toOrderedArray = function() {
+    let arr = [];
+
+    if (!this.val) return arr;
+
+    if (this.left) arr = arr.concat(this.left.toOrderedArray());
+    arr.push(this.val);
+    if (this.right) arr = arr.concat(this.right.toOrderedArray());
+
+    return arr;
+  };
+
   BST.prototype.BFSIterator = function(callBack) {
     let queue = [this];
 

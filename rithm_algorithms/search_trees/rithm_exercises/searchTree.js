@@ -65,38 +65,11 @@ let Repo = (() => {
     }
   }
 
-  BinarySearchTree.prototype.findRecursively = function(cur=this.root, nVal) {
-    console.log(cur)
+  BinarySearchTree.prototype.findRecursively = function(nVal, cur=this.root) {
     if (cur.value === nVal) return cur;
-    else if (cur.left) findRecursively(cur = cur.left, nVal);
-    else if (cur.right) this.right.findRecursively(cur = cur.right, nVal);
+    else if (cur.left) return this.findRecursively(nVal, cur = cur.left);
+    else if (cur.right) return this.findRecursively(nVal, cur = cur.right);
     else return undefined
-  }
-
-  BinarySearchTree.prototype.get = function(cur, nVal) {
-    // console.log(nVal);
-    // console.log(cur.value);
-    // console.log(cur.value === nVal); 
-
-    // // return cur;
-
-    // if (cur.value === nVal) return '&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)&)a'
-    // else if (cur.left) this.get(cur = cur.left, nVal);
-    // else if (cur.right) this.get(cur = cur.right, nVal);
-    // else return undefined;
-
-
-
-    // if (nVal < cur.value) {
-    //   if (!cur.left) return undefined;
-    //   if (cur.left.value === nVal) return cur.left;
-    //   return this.get(cur = cur.left);
-    // }
-    // if (nVal > cur.value) {
-    //   if (!cur.right) return undefined;
-    //   if (cur.right.value === nVal) return cur.right;
-    //   return this.get(cur = cur.right);
-    // }
   }
 
   BinarySearchTree.prototype.findIteratively = function(nVal) {
@@ -131,25 +104,18 @@ let Repo = (() => {
     return array;
   }
 
-  BinarySearchTree.prototype.toArray = function(node=this.root) {
-    arr = [];
+  BinarySearchTree.prototype.toOrderedArray = function(cur=this.root) {
+    let arr = [];
 
-    if (!node) {
-      return arr;
-    }
+    if (!cur) return arr;
 
-    if (node.left) {
-      arr = arr.concat(this.toArray(node.left));
-    }
-
-    arr.push(node.value);
-
-    if(node.right) {
-      arr = arr.concat(this.toArray(node.right));
-    }
+    if (cur.left) arr = arr.concat(this.toOrderedArray(cur.left));
+    arr.push(cur.value);
+    if (cur.right) arr = arr.concat(this.toOrderedArray(cur.right));
 
     return arr;
   }
+
 
   return {
     Node: Node,

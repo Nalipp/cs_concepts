@@ -17,28 +17,33 @@ BST.prototype.insert = function(newVal) {
   while (true) {
     if (newVal < current.val) {
       if (!current.left) return current.left = newNode;
-      else current = current.left;
+      current = current.left;
     }
-    if (newVal > current.val) {
+    else {
       if (!current.right) return current.right = newNode;
-      else current = current.right;
+      current = current.right;
     }
   }
 }
 
-BST.prototype.search = function(findVal, current=this.root) {
-  if (current.val === findVal) return true;
+// BST.prototype.search = function(searchVal, cur=this.root) {
+//   if (!cur) return false
+//   if (cur.val === searchVal) return true;
 
-  if (findVal < current.val) {
-    if (!current.left) return false;
-    return this.search(findVal, current = current.left);
-  }
+//   if (searchVal < cur.val) return this.search(searchVal, cur = cur.left);
+//   if (searchVal > cur.val) return this.search(searchVal, cur = cur.right);
+// }
 
-  if (findVal > current.val) {
-    if (!current.right) return false;
-    return this.search(findVal, current = current.right);
+BST.prototype.search = function(searchVal) {
+  let cur = this.root;
+
+  while (cur) {
+    if (cur.val === searchVal) return true;
+    if (searchVal < cur.val) cur = cur.left;
+    else cur = cur.right;
   }
-}
+  return false;
+};
 
 BST.prototype.BFSPrint = function() {
   let queue = [this.root];
@@ -62,8 +67,8 @@ tree.insert(5)
 // console.log(tree);
 
 // # Check search
-// console.log(tree.search(1));
+console.log(tree.search(1));
 // # Should be True
-// console.log(tree.search(4));
+console.log(tree.search(4));
 // # Should be False
-console.log(tree.BFSPrint());
+// console.log(tree.BFSPrint());

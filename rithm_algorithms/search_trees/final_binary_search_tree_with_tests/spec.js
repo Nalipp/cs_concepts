@@ -67,6 +67,14 @@ describe("#BFSIterator", function() {
   });
 });
 
+describe("#toOrderedArray", function() {
+  it("returns an array of the nodes in correct order", function(){
+    bst1.insert(10).insert(5).insert(22).insert(12).insert(25);
+    let array = bst1.toOrderedArray();
+    expect(array).to.deep.equal([ 5, 10, 12, 15, 22, 25 ]);
+  });
+});
+
 describe("#DFSPreOrderIterator", function() {
   it("performs a Pre Oder Depth First Search iteration", function() {
     bst1.insert(10).insert(5).insert(22).insert(12).insert(25);

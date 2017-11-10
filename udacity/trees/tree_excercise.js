@@ -1,35 +1,69 @@
-var BinaryTree = (() => {
+var Node = function(val) {
+  this.val = val;
+  this.left = null;
+  this.right = null;
+}
 
-  var Node = function(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
+var BST = function() {
+  this.root = null;
+}
+
+BST.prototype.insert = function(newVal) {
+  let newNode = new Node(newVal);
+
+  if (!this.root) return this.root = newNode;
+  let current = this.root;
+
+  while (true) {
+    if (newVal < current.val) {
+      if (!current.left) return current.left = newNode;
+      else current = current.left;
+    }
+    if (newVal > current.val) {
+      if (!current.right) return current.right = newNode;
+      else current = current.right;
+    }
+  }
+}
+
+BST.prototype.search = function(findVal, current=this.root) {
+  if (current.val === findVal) return true;
+
+  if (findVal < current.val) {
+    if (!current.left) return false;
+    return this.search(findVal, current = current.left);
   }
 
-  return {
-    Node: Node,
+  if (findVal > current.val) {
+    if (!current.right) return false;
+    return this.search(findVal, current = current.right);
   }
-})();
+}
 
-let node1 = new tree.Node(12)
+BST.prototype.BFSPrint = function() {
+  let queue = [this.root];
 
-console.log(node1);
+  while (queue.length > 0) {
+    let currentNode = queue.shift();
+    console.log(currentNode.val);
+    if (currentNode.left) queue.push(currentNode.left);
+    if (currentNode.right) queue.push(currentNode.right);
+  }
+}
 
-// # Set up tree
-// tree = BinaryTree(1)
-// tree.root.left = Node(2)
-// tree.root.right = Node(3)
-// tree.root.left.left = Node(4)
-// tree.root.left.right = Node(5)
+var tree = new BST(4)
 
-// # Test search
+// # Insert elements
+tree.insert(2)
+tree.insert(1)
+tree.insert(3)
+tree.insert(5)
+
+// console.log(tree);
+
+// # Check search
+// console.log(tree.search(1));
 // # Should be True
-// print tree.search(4)
+// console.log(tree.search(4));
 // # Should be False
-// print tree.search(6)
-
-// # Test print_tree
-// # Should be 1-2-4-5-3
-// print tree.print_tree()
-
-
+console.log(tree.BFSPrint());

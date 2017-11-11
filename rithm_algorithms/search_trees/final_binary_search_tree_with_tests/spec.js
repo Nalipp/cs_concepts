@@ -79,24 +79,28 @@ describe("#DFSPreOrderIterator", function() {
   it("performs a Pre Oder Depth First Search iteration", function() {
     bst1.insert(10).insert(5).insert(22).insert(12).insert(25);
     var array = [];
-    bst1.DFSPreOrderIterator((node) => array.push(node.val));
-    // expect(array).to.deep.equal([ 15, 10, 22, 5, 12, 25 ]);
+    bst1.DFSPreOrderIterator((node) => {
+      array.push(node.val);
+    });
+    expect(array).to.deep.equal([ 15, 10, 5, 12, 22, 25 ]);
   });
 });
+
 describe("#DFSInOrderIterator", function() {
   it("performs an In Oder Depth First Search iteration", function() {
     bst1.insert(10).insert(5).insert(22).insert(12).insert(25);
     var array = [];
     bst1.DFSInOrderIterator((node) => array.push(node.val));
-  //   expect(array).to.deep.equal([ 15, 10, 22, 5, 12, 25 ]);
+    expect(array).to.deep.equal([ 5, 10, 12, 15, 22, 25 ]);
   });
 });
+
 describe("#DFSPostOrderIterator", function() {
   it("performs a Post Oder Depth First Search iteration", function() {
     bst1.insert(10).insert(5).insert(22).insert(12).insert(25);
     var array = [];
     bst1.DFSPostOrderIterator((node) => array.push(node.val));
-  //   expect(array).to.deep.equal([ 15, 10, 22, 5, 12, 25 ]);
+    expect(array).to.deep.equal([ 5, 12, 10, 25, 22, 15 ]);
   });
 });
 

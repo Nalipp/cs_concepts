@@ -80,27 +80,23 @@ BST.prototype.__countChildren = function(node) {
   return count;
 };
 
-BST.prototype.remove = function(removeVal) {               // 9
-  var that = this;
 
+BST.prototype.remove = function(removeVal) {
+  var that = this;
   var removeNode = function(node, removeVal) {
     if(!node) return null;
-
-    if(removeVal === node.val) {                           // 9 === 9
+    if(removeVal === node.val) {
       if(!node.left && !node.right) return null;
       if(!node.left) return node.right;
       if(!node.right) return node.left;
       // 2 children
-      console.log('2 children');
       var temp = that.getMin(node.right);
-      console.log('temp', temp);
       node.val = temp;
       node.right = removeNode(node.right, temp);
       return node;
     }
-
-    if (removeVal < node.val) {                           // 9 < 15
-      node.left = removeNode(node.left, removeVal);       // 9, 9
+    if(removeVal < node.val) {
+      node.left = removeNode(node.left, removeVal);
       return node;
     } else {
       node.right = removeNode(node.right, removeVal);
@@ -111,19 +107,16 @@ BST.prototype.remove = function(removeVal) {               // 9
 };
 
 BST.prototype.getMin = function(node) {
-  console.log('getMin********************');
-  if (!node) node = this.root;
-  if (node.left) this.getMin(node.left);
-  console.log(node.val);
+  if(!node) node = this.root;
+  while(node.left) node = node.left;
   return node.val;
-}
+};
 
-// BST.prototype.getMax = function(node) {
-//   if (!node) node = this.root;
-//   if (node.right) this.getMin(node.right);
-//   return node.val;
-// }
-
+BST.prototype.getMax = function(node) {
+  if(!node) node = this.root;
+  while(node.right) node = node.right;
+  return node.val;
+};
 
 let tree = new BST();
 
@@ -138,13 +131,14 @@ tree.insert(14);
 tree.insert(10);
 tree.insert(12);
 
-tree.DFSPreOrder((n) => console.log(n.val));
+
+console.log('----------BFS----------') 
+tree.BFS((n) => console.log(n.val));
 
 console.log('----------remove----------') 
 tree.remove(9);
 
-// tree.DFSPreOrder((n) => console.log(n.val));
-// // console.log('----------BFS----------') 
+console.log('----------BFS----------') 
 tree.BFS((n) => console.log(n.val));
 
 // tree.DFSPreOrder(function(node) {

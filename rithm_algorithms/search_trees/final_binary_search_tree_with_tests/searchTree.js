@@ -89,55 +89,54 @@ let BSTRepo = (() => {
     }
   };
 
-  BST.prototype.remove = function(removeVal) {
-    var that = this;
-
-    var removeNode = function(node, removeVal) {
-      if(!node) return null;
-
-      if(removeVal === node.val) {
-        if(!node.left && !node.right) return null;
-        if(!node.left) return node.right;
-        if(!node.right) return node.left;
-        // 2 children
-        var temp = that.min(node.right);
-        node.val = temp;
-        node.right = removeNode(node.right, temp);
-        return node;
-      }
-
-      if (removeVal < node.val) {
-        node.left = removeNode(node.left, removeVal);
-        return node;
-      } else {
-        node.right = removeNode(node.right, removeVal);
-        return node;
-      }
-    };
-    this.root = removeNode(this.root, removeVal);
-  };
-
   BST.prototype.min = function(node) {
-    if (!node) node = node.root();
-    if (node.left) this.min(node.left);
-    return node.val;
+    if (!node) node = this;
+    if (node.left) return node.left.min();
+    else return node;
   }
 
   BST.prototype.max = function(node) {
-    if (!node) node = node.root();
-    if (node.right) this.min(node.right);
-    return node.val;
+    if (!node) node = this;
+    if (node.right) return node.right.max();
+    else return node;
   }
 
-  BST.prototype.min = function() {
-    if (this.left) return this.left.min();
-    else return this;
-  }
+  // BST.prototype.min = function() {
+  //   if (this.left) return this.left.min();
+  //   else return this;
+  // }
 
-  BST.prototype.max = function() {
-    if (this.right) return this.right.max();
-    else return this;
-  }
+  // BST.prototype.max = function() {
+  //   if (this.right) return this.right.max();
+  //   else return this;
+  // }
+
+  BST.prototype.remove = function(removeVal) {           // 9
+    console.log(this.val);                               // 9
+    console.log(this.left);                               
+    console.log(this.right);                               
+    if(removeVal === this.val) {                         // 9 === 9
+      if(!this.left && !this.right) return null;
+      if(!this.left) return this.right; 
+      if(!this.right) return this.left;
+      // 2 children
+      
+      console.log('!!!!');
+      temp = this.min(this.right);
+      console.log('!!!!', temp);
+      this.val = temp.val;
+      this.right.remove(removeVal);
+      return this;
+    }
+
+    if (removeVal < this.val) {                          // 9 < 15
+      if (this.left) this.left.remove(removeVal);        
+      return this;
+    } else {
+      if (this.right) this.right.remove(removeVal);
+      return this;
+    }
+  };
 
   return {
     BST: BST
@@ -145,3 +144,29 @@ let BSTRepo = (() => {
 })();
 
 module.exports = BSTRepo;
+
+let tree = new BSTRepo.BST(15);
+
+tree.insert(9);
+tree.insert(22);
+tree.insert(5);
+tree.insert(13);
+tree.insert(25);
+tree.insert(11);
+tree.insert(14);
+tree.insert(10);
+tree.insert(12);
+
+console.log('-------------------print---------------------');
+tree.BFSIterator((n) => console.log(n.val));
+
+console.log('-------------------remove---------------------');
+tree.remove(10);
+
+console.log('-------------------print---------------------');
+tree.BFSIterator((n) => console.log(n.val));
+
+
+// contains
+// getHeight
+// isBalanced

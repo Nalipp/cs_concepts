@@ -3,17 +3,17 @@ make a spreadsheet of companies
 
 make a list of industries you would like to work in 
   education
+  coaching
   travel education
+  accomidation / real estate
   dev shop
-  real estate
-  accomidation
   fintech
 
 make a list of priorities
   100k
   diversity
   life work balance 
-  B2C?
+  B2C? which tend to be prettier
   
 
 angel list filter by industry

@@ -24,8 +24,8 @@ trees
                        because there are two edges between the root node and the furthest leaf
   tree height   -> the height of the overall tree is the height of the root node (3 levels would be a height of 2)
   depth         -> the number of edges to the root (the inverse of height and still not plus one)
-  ancestor      -> is a lower level on the tree from a descendant
-  descendant    -> is a higher level on the tree from an ancestor
+  ancestor      -> 
+  descendant    ->
   leaf          -> are the lowest decendents, a leaf does not have children, a leaf it at the highest level
   external node -> nodes at the highest level (aka leaves) at the end of the tree
   internal node -> nodes that are not at the end of the tree (any node except leaves, a parent node)

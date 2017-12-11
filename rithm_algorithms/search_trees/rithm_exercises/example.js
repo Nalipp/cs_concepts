@@ -64,6 +64,7 @@ BinarySearchTree.prototype.remove = function(data) {
   };
   this.root = removeNode(this.root, data);
 };
+
 BinarySearchTree.prototype.contains = function(data) {
   var current = this.root;
   while(current) {
@@ -257,22 +258,21 @@ BinarySearchTree.prototype.isBalancedOptimized = function(node) {
   }
 };
 
-var binarySearchTree = new BinarySearchTree();
-binarySearchTree.add(15);
-binarySearchTree.add(9);
-binarySearchTree.add(22);
-binarySearchTree.add(5);
-binarySearchTree.add(13);
-binarySearchTree.add(25);
-binarySearchTree.add(11);
-binarySearchTree.add(14);
-binarySearchTree.add(10);
-binarySearchTree.add(12);
+var bst1 = new BinarySearchTree();
+bst1.add(15);
+bst1.add(9);
+bst1.add(22);
+bst1.add(5);
+bst1.add(13);
+bst1.add(25);
+bst1.add(11);
+bst1.add(14);
+bst1.add(10);
+bst1.add(12);
 
-console.log(binarySearchTree.print());
-binarySearchTree.remove(9);
-console.log(binarySearchTree.print());
-
+bst1.print();
+bst1.remove(9);
+bst1.print();
 
 // binarySearchTree.print(); // => 5 | 3 7 | 2 4 6 8
 // binarySearchTree.printByLevel(); // => 5 \n 3 7 \n 2 4 6 8

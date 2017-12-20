@@ -12,7 +12,7 @@ let binarySearch = (inputArray, value) => {
     if (value === guess) return mid;
     if (value < guess) max = mid;
     if (value > guess) min = mid;
-    mid = Math.floor((max - min) / 2) + min;        
+    mid = Math.floor((max + min) / 2);        
   }
   return -1;
 }

@@ -26,8 +26,27 @@
 
 // console.log(permut('abcd'));
 
+// function findAllPermutations(str) {
+//   let results = [];
+//   if (str.length === 1) {
+//     results.push(str);
+//     return results;
+//   }
+
+//   for (let i = 0; i < str.length; i++) {
+//     let char = str[i];
+//     let remaining = str.slice(0, i) + str.slice(i + 1);
+//     let permutations = findAllPermutations(remaining);
+//     for (let i = 0; i < permutations.length; i++) {
+//       results.push(char + permutations[i]);
+//     }
+//   }
+//   return results;
+// }
+
+// console.log(findAllPermutations('abcd'));
+
 function findAllPermutations(str) {
-  console.log(str);
   let results = [];
   if (str.length === 1) {
     results.push(str);
@@ -35,15 +54,14 @@ function findAllPermutations(str) {
   }
 
   for (let i = 0; i < str.length; i++) {
-    let char = str[i];
-    let remaining = str.substr(0, i) + str.substr(i + 1);
+    let current = str[i];
+    let remaining = str.slice(0, i) + str.slice(i + 1);
     let permutations = findAllPermutations(remaining);
     for (let i = 0; i < permutations.length; i++) {
-      results.push(char + permutations[i]);
+      results.push(current + permutations[i]);
     }
   }
   return results;
 }
 
-console.log(findAllPermutations('abcde'));
-
+console.log(findAllPermutations('abcd'));

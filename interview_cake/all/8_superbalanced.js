@@ -20,7 +20,7 @@ root.insertRight(20);
 
 root.left.insertLeft(5);
 root.left.insertRight(12);
-root.left.right.insertLeft(10);
+root.left.right.insertRight(10);
 
 BinaryTreeNode.prototype.print = function() {
 }

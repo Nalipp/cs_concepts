@@ -1,0 +1,9 @@
+****************************************************************************************************
+things to do
+
+
+  find the optimal solution to two sum II
+  - practice binary search on the whiteboard
+
+  find the solution to palindrome link lists
+  - work on linked list propblems from leetcode

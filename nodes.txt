@@ -10,3 +10,10 @@ things to do
 
   udemy
   - start at the beginning
+
+  practice
+
+    xfibonacci
+    - xiterative
+    - xrecursive
+    - xrecursive memonization

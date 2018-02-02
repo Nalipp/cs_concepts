@@ -7,3 +7,6 @@ things to do
 
   find the solution to palindrome link lists
   - work on linked list propblems from leetcode
+
+  udemy
+  - start at the beginning

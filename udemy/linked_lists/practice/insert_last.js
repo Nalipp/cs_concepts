@@ -17,7 +17,6 @@ List.prototype.insertLast = function(val) {
     }
     current.next = newNode;
   }
-
   return this;
 }
 

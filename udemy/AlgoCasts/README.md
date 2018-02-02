@@ -8,6 +8,7 @@ or
 
 $ jest fib --watch
 
+### measure performance
 
 ```
   var start = new Date().getTime();
@@ -18,3 +19,17 @@ $ jest fib --watch
   var time = end - start;
   console.log('Execution time: ' + time);
 ```
+
+### debugging
+
+type 'debugger' where you want to pause the code execution
+
+$ node inspect <filename>;
+
+$ c      // to continue
+
+$ repl   // to access the variables
+
+you have to exit repl, press c and re-enter repl to move through iterations??
+
+

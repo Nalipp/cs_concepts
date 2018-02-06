@@ -9,13 +9,11 @@ function maxChar(str) {
   let maxChar;
   let maxCount = 0;
   let hash = {};
-  for (let i = 0; i < str.length; i++) {
-    let c = str[i];
-    if (hash[c]) hash[c] += 1;
-    else hash[c] = 1;
+  for (let char of str) {
+    hash[char] = hash[char] + 1 || 1;
 
-    maxCount = Math.max(maxCount, hash[c]);
-    maxChar = (maxCount > hash[c]) ? maxChar : c; 
+    maxCount = Math.max(maxCount, hash[char]);
+    maxChar = (maxCount > hash[char]) ? maxChar : char; 
   }
   return maxChar;
 }

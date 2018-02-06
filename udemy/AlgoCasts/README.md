@@ -32,4 +32,8 @@ $ repl   // to access the variables
 
 you have to exit repl, press c and re-enter repl to move through iterations??
 
+### runtimes
+
+O(n) : constant time -> No matter how many 
+
 

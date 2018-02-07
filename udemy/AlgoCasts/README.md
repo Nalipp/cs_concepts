@@ -32,8 +32,41 @@ $ repl   // to access the variables
 
 you have to exit repl, press c and re-enter repl to move through iterations??
 
+
 ### runtimes
 
-O(n) : constant time -> No matter how many 
+O(1)         : constant time    -> No matter how many elements, the opperation will always take the same amount of time
+O(log n)     : logarithmic time -> Doubling the number of elements doesn't double the amount of work (searhching algorithms)  
+O(n)         : linear time      -> Iterating through each element in a collection of data
+O(n * log n) : quasilinear time -> Doubling the number of elements doesn't double the amount of work (sorting algorithms)  
+O(n^2)       : quadratic time   -> Every element has to be compared with every other element
+O(2^n)       : exponential time -> Each element added doubles the processing power needed
 
 
+### data structures
+
+## Queue
+
+Content comes in added to end and removed from the front (FIFO)
+like waiting in line last in is last serverd
+
+Enqueuing -> adding to the queue
+Dequeuing -> removing from the queue
+
+a Queue (according to the instructor) actually makes use of an array data structure but only exposes, add, remove, and peek functionality
+```
+  class Queue {
+    constructor() {
+      this.data = [];
+    }
+    add(val) {
+      this.data.unshift(val);
+    }
+    remove() {
+      return this.data.pop();
+    }
+    peek() {
+      return this.data[this.data.length - 1];
+    }
+  }
+```

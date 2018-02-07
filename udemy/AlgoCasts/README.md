@@ -1,6 +1,6 @@
 # AlgoCasts
 
-### run tests
+## run tests
 
 $ jest fib/test.js --watch
 
@@ -8,7 +8,7 @@ or
 
 $ jest fib --watch
 
-### measure performance
+## measure performance
 
 ```
   var start = new Date().getTime();
@@ -20,7 +20,7 @@ $ jest fib --watch
   console.log('Execution time: ' + time);
 ```
 
-### debugging
+## debugging
 
 type 'debugger' where you want to pause the code execution
 
@@ -33,19 +33,24 @@ $ repl   // to access the variables
 you have to exit repl, press c and re-enter repl to move through iterations??
 
 
-### runtimes
+## runtimes
 
 O(1)         : constant time    -> No matter how many elements, the opperation will always take the same amount of time
+
 O(log n)     : logarithmic time -> Doubling the number of elements doesn't double the amount of work (searhching algorithms)  
+
 O(n)         : linear time      -> Iterating through each element in a collection of data
+
 O(n * log n) : quasilinear time -> Doubling the number of elements doesn't double the amount of work (sorting algorithms)  
+
 O(n^2)       : quadratic time   -> Every element has to be compared with every other element
+
 O(2^n)       : exponential time -> Each element added doubles the processing power needed
 
 
-### data structures
+## data structures
 
-## Queue
+### Queue
 
 Content comes in added to end and removed from the front (FIFO)
 like waiting in line last in is last serverd
@@ -70,3 +75,7 @@ a Queue (according to the instructor) actually makes use of an array data struct
     }
   }
 ```
+
+### Stack
+
+Content is pushed onto the top of the stack and removed fromthe top of the stack (LIFO)

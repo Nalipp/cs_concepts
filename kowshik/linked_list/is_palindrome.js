@@ -1,5 +1,3 @@
-Where you able to get the first day study booked?
-
 class Node {
   constructor(val, next) {
     this.val = val;
@@ -13,6 +11,10 @@ class LinkedList {
   }
 }
 
+let nodes = new Node('m', new Node('o'));                                                      // => false
+// let nodes = new Node('m', new Node('o', new Node('m')));                                       // => true
+// let nodes = new Node('m', new Node('m', new Node('m', new Node('o'))));                        // => false
+// let nodes = new Node('m', new Node('o', new Node('m', new Node('o', new Node('m')))));         // => true
 let list = new LinkedList();
 list.head = nodes;
 

@@ -79,3 +79,15 @@ a Queue (according to the instructor) actually makes use of an array data struct
 ### Stack
 
 Content is pushed onto the top of the stack and removed fromthe top of the stack (LIFO)
+
+## Trees
+
+### Tree vs Binary Tree vs Binary Search Tree
+
+Tree               -> each node can have many (an array) of children in any order
+
+Binary Tree        -> each node can only have two children (right or left) but can be in any order
+
+Binary Search Tree -> each node can only have two children and it must be ordered (such as small to left, large to right)
+
+

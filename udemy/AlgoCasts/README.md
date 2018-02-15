@@ -90,4 +90,6 @@ Binary Tree        -> each node can only have two children (right or left) but c
 
 Binary Search Tree -> each node can only have two children and it must be ordered (such as small to left, large to right)
 
+interview tip : make sure you clairify the tree is ordered or not
+
 

@@ -3,7 +3,6 @@ function TreeNode(val) {
   this.left = this.right = null;
 }
 
-
 n1 = new TreeNode(1);
 n1.right = new TreeNode(2);
 n1.right.right = new TreeNode(3);

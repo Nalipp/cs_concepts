@@ -1,0 +1,86 @@
+****************************************************************************************************
+graphs
+
+**************************************************
+introduction
+
+  graphs are non linear data structures
+  the (G) graph is an ordered pair 
+  G = (V, E)
+  they are represented by a set of verticies (V) and edges (E)
+  the graph can either have directional or non-directional edges
+  graphs can be cyclical (multiple edges can come from a single verticy)
+
+  ordered pair (a, b)
+    (a, b) != (b, a) unless a == b
+    ordered pairs have directed edge
+      the origin and destination is fixed
+
+  unordered pair {a, b}
+    {a, b} == {b, a}
+
+  graphs can either be directed or undirected
+    directed graph (digraph)
+    undirected graph
+
+  they can also be weighted or non weighted so you can have
+    weighted directed graph
+    unweighted directed graph
+    weighted undirected graph
+    unweighted unditected graph
+
+  trees are a form of non-cyclical graph (the number of edges is nodes - 1)
+  trees have parent child relationships where all nodes except the root node have exactly one parrent
+
+  practical example : web crawling
+    web crawling is simply directed graph traversal (visiting all nodes in a graph)
+
+
+**************************************************
+properties of graphs
+
+  self loop -> when a verticy origin and destination is the same (either in with directed or undirected edge)
+    example : webpage that is linked to the current page
+
+  multi edge -> a verticy origin has multiple edges pointed to a single destination verticy
+    example : there can be multiple flights from one city to another all with different edges/weights
+
+  simple graphs are graphs without self loops or multi edges
+
+  maximum number of edges (simple graph)
+    directed graph -> n * n-1 
+      each edge points at all other edges except itself
+      this is a strongly connected graph
+
+    undirected graph -> (n * n-1) / 2
+      there can only be one edge between verticies
+      this is a connected graph
+
+  the maximum number of edges in a simple graph is close to the square of the number of verticies
+
+  dense vs sparse
+    dense graph -> when the number of edges is close to the maximum possible (dense graphs may use a matrix data structure)
+    sparse graph -> when the number of edges is close to the minimum possible (sparse graphs may use a list data structure)
+
+  path vs simple path
+    a path can have repeated verticies
+    a simple path cannot
+
+  walk vs trail
+    a walk is when no verticies or edges are repeated
+      closed walk is when the start and end verticy are the same (forming a loop) and the length of the walk is greater than zero
+      a closed walk with a simple cycle (or cycle) is when the start and end verticy are the same but no other verticies are repeated
+    a trail is when verticies can be repeated but edges cannot be repeated
+
+    cycle graph vs acyclic graph
+      cycle graph -> closed walk with same start and end verticies with no repeated verticies
+      acyclic graph -> a graph with no cycle (example : undirected trees)
+
+  simple cycle vs acyclic graph
+
+  strongly connected vs connected graph vs weakly connected ????
+    strongly connected graph is when a verticy can connecte with all other verticies in the graph
+    connected graph is an undirected graph where each verticy can only point to one other verticy
+    weakly connected
+    
+

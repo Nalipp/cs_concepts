@@ -82,5 +82,40 @@ properties of graphs
     strongly connected graph is when a verticy can connecte with all other verticies in the graph
     connected graph is an undirected graph where each verticy can only point to one other verticy
     weakly connected
-    
+
+****************************************************************************************************
+graph representation
+
+  verticies list
+    keeping track of edges and verticies using two lists
+    a verticies list can be used to give an index to a name
+    so that if there are repeated values in our edge list we can save on space to store those values
+    however the most common operations when working with graphs is
+      finding adjacent nodes
+      checking if given nodes are connected
+    both of these require a linear search O(n) and the numbe of edges can be close to the sqaure of the verticies!
+
+  adjacency matrix graph
+    good if the graph is dense, but unrealistic when the number of verticies is high and the number of connections is low (sparse)
+
+    keeps track of the connections between verticies using a grid that uses 1 for true and 0 for false or weighted value for true and undefined for false
+    a matrix graph in an undirected graph is semetrical so that the bottom half is equal to the top (you only need to search one)
+
+    finding adacent nodes
+      now we can scan through the verticies list for the verticy we want to find adjacent nodes for, from here we can scan all vertices in the row
+      which is still o(n) worst case but much more efficent that scanning every single verticy
+
+    finding if two nodes are connected
+      we still have to scan the vertices list for a first node and then scan the list associated with it for the second value -> O(n)
+      to improve we can maintain a hash table 
+      however this is a large data structure to mantain so space complexity is O(n^2)
+        this is fine if the graph is very dense, because we need to store that many values any way
+        but if the graph is very sparse we are wasting a lot of space
+        most large graphs are not very dense so the space to represent them would be very wastefull
+        social network example : there are a billion users but most people are not connected
+
+  adjacency list representation
+
+
+      
 

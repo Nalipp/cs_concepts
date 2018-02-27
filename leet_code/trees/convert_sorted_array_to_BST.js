@@ -3,10 +3,9 @@ function TreeNode(val) {
   this.left = this.right = null;
 }
 
-var insert = function(root, val) {
+TreeNode.prototype.insert = function(val) {
   let newNode = new TreeNode(val);
-  if(!root) return root = newNode;
-  let current = root;
+  current = this;
   while (current) {
     if (val <= current.val) {
       if (!current.left) return current.left = newNode;
@@ -17,23 +16,38 @@ var insert = function(root, val) {
       else current = current.right;
     }
   }
-  return root;
 }
 
 var sortedArrayToBST = function(nums) {
-  if (!nums) return [];
-  let midI = Math.floor(nums.length / 2);
-  let root = new TreeNode(nums[midI]);
-  let leftI = rightI = midI;
-  while (leftI--) insert(root, nums[leftI]);
-  while (rightI++ < nums.length - 1) insert(root, nums[rightI]);
+  if (!nums.length) return null;
+  let mid = Math.floor(nums.length / 2);       // 2
+
+  function inner(nums, root) {
+    if (!nums.length) return;
+    let mid = Math.floor(nums.length / 2);
+    root.insert(nums[mid])
+    inner(nums.slice(0, mid), root);
+    inner(nums.slice(mid + 1), root);
+  }
+
+  let newNode = new TreeNode(nums[mid]);       // 0
+  let root = newNode;
+  inner(nums.slice(0, mid), root);
+  inner(nums.slice(mid + 1), root);
+
   return root;
 };
 
-// let nums = [-10, -3, 0, 9, 5];
-let nums = [0,1,2,3,4,5];
+let nums = [-10, -3, 0, 9, 5];
 
-console.log(JSON.stringify(sortedArrayToBST(nums)));
+// let n1 = new TreeNode(0);
+// n1.insert(-3);
+// n1.insert(9);
+// n1.insert(-10);
+// n1.insert(5);
+
+console.log(sortedArrayToBST(nums));
+
 
 // let root = new TreeNode(0)
 // insert(root, -3);
@@ -42,3 +56,5 @@ console.log(JSON.stringify(sortedArrayToBST(nums)));
 // insert(root, 5);
 
 // console.log(root);
+
+

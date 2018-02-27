@@ -1,0 +1,26 @@
+****************************************************************************************************
+sorting
+
+
+most common for interviews
+  mergesort
+  quicksort
+  bucke/radix sort
+
+others
+  counting sort
+  selection sort
+
+  bubble sort
+    start at first to and swap if out of order, move to the next, repeat until no swaps are being made
+    best time   O(n) (only if a few elements are out of place
+    average time and worst time  O(n^n)
+    space
+
+  selection sort
+    (childs algorighm) scan the entire list for the current min and swap if for the last element in the list
+    average and worst case O(n^2)
+    space O(n)
+  
+
+

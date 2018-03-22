@@ -10,11 +10,9 @@ head.next.next.next = new LinkedListNode(4);
 head.next.next.next.next = new LinkedListNode(5);
 
 function printListBackwards(head) {
-  if (!head.next) {
-    console.log(head);
-    return head;
-  }
-  head = printListBackwards(head.next);
+  if (!head) return;
+  printListBackwards(head.next);
+  console.log(head);
 }
 
 printListBackwards(head);

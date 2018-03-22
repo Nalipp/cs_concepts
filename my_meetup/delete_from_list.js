@@ -1,7 +1,5 @@
 // Delete a node from a liked list given ONLY the value of the node.
 //
-// Hint: it is not possible to delete the last element from the list
-// deleteNode(c);  // should throw an error
 
 function LinkedListNode(val) {
   this.val = val;
@@ -25,10 +23,6 @@ deleteNode(a);
 console.log(a); // => 'B' -> 'C';
 
 
-  // if (!node.next) {
-  //   throw new Error('cannot delete last element');
-  // }
-  // else {
-  //   node.val = node.next.val; 
-  //   node.next = node.next.next;
-  // }
+//
+// Hint: it is not possible to delete the last element from the list
+// deleteNode(c);  // should throw an error

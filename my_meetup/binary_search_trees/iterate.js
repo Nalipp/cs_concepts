@@ -29,6 +29,10 @@ BST.prototype.insert = function(val) {
   return this.head;
 }
 
+BST.prototype.iterate = function(fn) {
+  this.iteratePreOrder(fn);
+}
+
 BST.prototype.iterateInOrder = function(fn) {
   if (!this.head) return null;
 

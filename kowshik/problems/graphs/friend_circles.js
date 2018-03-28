@@ -14,39 +14,40 @@ let n7 = new node(7);
 let n8 = new node(8);
 let n9 = new node(9);
 
-n0.friends = [4];
-n1.friends = [2];
-n2.friends = [1, 7];
-n3.friends = [4];
-n4.friends = [3, 8];
-n5.friends = [6, 9];
-n6.friends = [5, 9];
-n7.friends = [2];
-n8.friends = [4];
-n9.friends = [5, 6];
+n0.friends = [n4];
+n1.friends = [n2];
+n2.friends = [n1, n7];
+n3.friends = [n4];
+n4.friends = [n3, n8];
+n5.friends = [n6, n9];
+n6.friends = [n5, n9];
+n7.friends = [n2];
+n8.friends = [n4];
+n9.friends = [n5, n6];
 
-let users = [n1, n2, n3, n4, n5, n6, n7, n8, n9];
+let classmates = [n0, n1, n2, n3, n4, n5, n6, n7, n8, n9];
 
-function iterate(users) {
+function countCircles(classmates) {
   let count = 0;
   let seen = [];
-  for (let v of users) seen.push(0);
-  for (let i = 0; i < users.length; i++) {
+  for (let v of classmates) seen.push(0);
+
+  for (let i = 0; i < classmates.length; i++) {
     if (seen[i] === 0) {
       seen[i] = 1;
-      function findFriends(friends) {
-        for (let friend of friends) {
-          if (seen[friend] === 0) {
-            seen[friend] = 1;
-            findFriends(friend.friends);
-          } 
+      function findFriends(user) {
+        for (let friend of user.friends) {
+          if (seen[friend.id] === 0) {
+            seen[friend.id] = 1;
+            findFriends(friend);
+          }
         }
-        count += 1;
       }
-      findFriends(users[i].friends);
+      findFriends(classmates[i]);
+      count += 1;
     }
   }
   return count;
 }
 
-console.log(iterate(users));
+console.log(countCircles(classmates));

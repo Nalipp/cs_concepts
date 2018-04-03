@@ -1,5 +1,3 @@
-// keeping track of mins
-
 class Stack {
   constructor() {
     this.nodes = [];
@@ -39,11 +37,3 @@ s1.pop();
 s1.pop();
 
 console.log(s1);
-
-
-
-
-// key takeaways from last nights lesson
-
-// when working with stacks it doesn't matter what data structure you use
-

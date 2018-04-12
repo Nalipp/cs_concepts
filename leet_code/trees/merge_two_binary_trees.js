@@ -56,7 +56,8 @@ function buildTree(arr) {
   return root
 }
 
-console.log(buildTree([ 3, 4, 5, 5, 4, null, 7, null, null, null, null ]));
+let result = buildTree([ 3, 4, 5, 5, 4, null, 7, null, null, null, null ]);
+console.log(result); 
 
 // let t1 = new TreeNode(1);
 // t1.left = new TreeNode(3);

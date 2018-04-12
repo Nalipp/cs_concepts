@@ -11,8 +11,6 @@ n1.left.left = new node(5);
 n1.left.right = new node(12);
 n1.right.left = new node(16);
 
-module.exports = n1;
-
 
 //       15
 //     /    \

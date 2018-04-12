@@ -12,7 +12,7 @@ n1.left.right = new node(12);
 n1.right.left = new node(16);
 n1.right.left.right = new node(18);
 
-var diameterOfBinaryTree = function(root) {
+var maxDistanceBetweenTwoNodes = function(root) {
   if (!root) return 0;
   let queue = [root];
   let maxDiameter = 0;
@@ -34,5 +34,5 @@ function findMaxDepth(root) {
   return Math.max(leftTotal, rightTotal);
 }
 
-console.log(diameterOfBinaryTree(n1));
+console.log(maxDistanceBetweenTwoNodes(n1));
 

@@ -23,3 +23,4 @@ function invertTree(node) {
 }
 
 console.log(invertTree(n1)); 
+

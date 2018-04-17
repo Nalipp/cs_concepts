@@ -34,7 +34,7 @@ let ajacencyMatrixGraph = [
   [1, 0, 0, 0, 0],
   [0, 0, 0, 1, 0],
   [0, 1, 0, 0, 0],
-];
+];  
 
 console.log(bfs(ajacencyMatrixGraph, 1));
 

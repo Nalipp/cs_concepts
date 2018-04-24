@@ -3,18 +3,23 @@ var topKFrequent = function(nums, k) {
   let h2 = {};
   let results = [];
   let frequencies = [];
+
   for (let i = 0; i < nums.length; i++) {
     if (!h1[nums[i]]) h1[nums[i]] = 1;
     else h1[nums[i]] += 1;
   }
+
   for (let k in h1) {
     h2[h1[k]] = k;
     frequencies.push(h1[k]);
   }
+
   let sorted = frequencies.sort((a, b) => b - a);
+
   for (let i = 0; i < k; i++) {
     results.push(h2[sorted[i]]);
   }
+
   console.log(h1);
   console.log(h2);
 };

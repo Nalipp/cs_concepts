@@ -1,16 +1,32 @@
-var wordPattern = function(pattern, str) {
-  let strArr = str.split(' ');
-  if (pattern.length !== strArr.length) return false;
-  if (pattern.length === 0) return true;
+let wordPattern = function(pattern, str) {
+  let words = str.split(' ');
   let hash = {};
   let seen = [];
+
+  if (pattern.length !== words.length) {
+    return false;
+  }
+
+  if (pattern.length === 0) {
+    return true;
+  }
+
   for (let i = 0; i < pattern.length; i++) {
-    if (!hash[pattern[i]]) {
-      if (seen.includes(strArr[i])) return false;
-      seen.push(strArr[i]);
-      hash[pattern[i]] = strArr[i];
+    let char = pattern[i];
+    let word = words[i];
+
+    if (hash[char] === undefined) {
+      if (seen.includes(word)) {
+        return false;
+      }
+
+      hash[char] = word;
+      seen.push(word);
     } else {
-      if (hash[pattern[i]] !== strArr[i]) return false;
+
+      if (hash[char] !== word) {
+        return false;
+      }
     }
   }
   return true;

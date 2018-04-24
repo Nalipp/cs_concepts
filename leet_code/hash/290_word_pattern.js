@@ -1,3 +1,6 @@
+// Given a pattern and a string str, find if str follows the same pattern.
+// You may assume pattern contains only lowercase letters, and str contains lowercase letters separated by a single space.
+
 let wordPattern = function(pattern, str) {
   let words = str.split(' ');
   let hash = {};

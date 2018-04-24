@@ -1,29 +1,54 @@
-var topKFrequent = function(nums, k) {
-  let h1 = {};
-  let h2 = {};
-  let results = [];
-  let frequencies = [];
+function topKFrequent(nums, k) {
+  var topAndHash = createHash(nums);
+  var top = topAndHash[0];
+  var hash = topAndHash[1];
+  var results = [];
 
-  for (let i = 0; i < nums.length; i++) {
-    if (!h1[nums[i]]) h1[nums[i]] = 1;
-    else h1[nums[i]] += 1;
+  while (results.length < k) {
+    var valueArr = hash[top];
+
+    while (valueArr && valueArr.length && results.length !== k) {
+      results.push(valueArr.shift());
+    }
+
+    top -= 1;
   }
 
-  for (let k in h1) {
-    h2[h1[k]] = k;
-    frequencies.push(h1[k]);
-  }
-
-  let sorted = frequencies.sort((a, b) => b - a);
-
-  for (let i = 0; i < k; i++) {
-    results.push(h2[sorted[i]]);
-  }
-
-  console.log(h1);
-  console.log(h2);
+  return results;
 };
+
+
+function createHash(arr) {
+  var maxCount = 0;
+  var hash = {};
+  var curCount = 1;
+
+  for (var i = 0; i < arr.length; i++) {
+    var num = arr[i];
+
+    if (num === arr[i + 1]) {
+      curCount++;
+
+    } else {
+
+      if (hash[curCount]) {
+        hash[curCount].push(num);
+
+      } else {
+        hash[curCount] = [num];
+      }
+
+      maxCount = Math.max(maxCount, curCount);
+      curCount = 1;
+    }
+  }
+
+  return [maxCount, hash];
+}
 
 // console.log(topKFrequent([1,1,1,2,2,3], 2)); // => [1, 2]
 // console.log(topKFrequent([2, 2, 3, 2, 3, 1, 2, 3, 4, 1], 2)); // => [2, 3]
-console.log(topKFrequent([1, 2], 2)); // => [1, 2]
+// console.log(topKFrequent([1, 2], 2)); // => [1, 2]
+// console.log(topKFrequent([1, 1, 1, 2, 3, 3, 4, 4, 5, 5], 3)); // => [1, 3, 4]
+console.log(topKFrequent([3,0,1,0], 1)); // => [0]
+

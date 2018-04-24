@@ -1,3 +1,6 @@
+// Given an array of integers, 
+// Return true if the array contains any duplicates else return false;
+
 var containsDuplicate = function(nums) {
   let hash = {};
 

@@ -1,4 +1,4 @@
-// given an array of integers
+// given an array of unique integers
 // find the pairs of values that when added together are divisible by 5
 // return the index pairs in an array of arrays
 //
@@ -12,7 +12,21 @@
 
 
 function divisableByFive(arr) {
-  // code here
+  var results = [];
+
+  for (var i = 0; i < arr.length - 1; i++) {
+    var first = arr[i];
+
+    for (var j = i + 1; j < arr.length; j++) {
+      var second = arr[j];
+      var sum = first + second;
+
+      if (sum % 5 === 0) {
+        results.push([i, j]);
+      }
+    }
+  }
+  return results;
 }
 
 
@@ -41,6 +55,8 @@ console.log(divisableByFive([2, 4, 7, 11, 0, 3, 1, 9]));
 
 
 
+// O(n)2
+//
 // function divisableByFive(arr) {
 //   var results = [];
 
@@ -58,4 +74,3 @@ console.log(divisableByFive([2, 4, 7, 11, 0, 3, 1, 9]));
 //   }
 //   return results;
 // }
-

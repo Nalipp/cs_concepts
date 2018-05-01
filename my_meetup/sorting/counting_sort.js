@@ -32,7 +32,7 @@ let createCountsArr = (str) => {
   return counts;
 }
 
-let str = 'acbcabaababe'
+let str = 'acbcabaababe';
 console.log(countingSort(str));
 
 

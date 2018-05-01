@@ -1,5 +1,7 @@
 // group anagrams
-//
+// .sort(), obj counts
+
+
 // Input: ["eat", "tea", "tan", "ate", "nat", "bat"],
 // Output:
 // [

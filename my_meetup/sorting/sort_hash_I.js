@@ -44,7 +44,7 @@ let getTopKFrequent = (arr, k) => {
   return results;
 }
 
-let str = 'acecabaaeaee';
+let str = 'cbecaeaaeaeab';
 let countsObj = getCountObj(str);
 let arrCounts = convertObjCountToArrCounts(countsObj);
 let sorted = sortArrOfCounts(arrCounts);

@@ -5,8 +5,10 @@ let getCountObj = (str) => {
     let char = str[i];
 
     if (counts[char]) {
+
       counts[char] += 1;
     } else {
+
       counts[char] = 1;
     }
   }
@@ -21,8 +23,10 @@ let getFreqCounts = (obj) => {
     let val = obj[key];
 
     if (counts[val]) {
+
       counts[val].push(key);
     } else {
+
       counts[val] = [key];
     }
   }
@@ -48,11 +52,11 @@ let getTopK = (arr, k) => {
   return results;
 }
 
-let str = 'acbecabaaeaee';
+let str = 'cbecaeaaeaeab';
 let countObj = getCountObj(str);
 let freqCounts = getFreqCounts(countObj);
 let freqArr = Object.entries(freqCounts);
 let sorted = freqArr.sort((a, b) => a[0] < b[0]);
-let top3 = getTopK(sorted, 3);
+// let top3 = getTopK(sorted, 3);
 
-console.log(top3); 
+console.log(freqArr); 

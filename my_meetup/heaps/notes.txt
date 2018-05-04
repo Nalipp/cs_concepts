@@ -1,0 +1,54 @@
+****************************************************************************************************
+heaps O(n log n)
+
+O(log n) for push and pop
+
+priority queue -> implements a set of elements, each of elements associated with a key
+
+insert(set, x)           -> insert ele into set
+max(set)                 -> return ele of the set with the largest key
+extract_max()            -> returns and removes the max from the set
+increase_key(set, x, k)  -> increase the val of x's key to new value k
+
+root   => i = 1
+parent => i / 2
+left   => i * 2
+right  => (i * 2) + 1
+
+
+a max heap is when => the key of a node is bigger or equal to each key of its children 
+
+build_max_heap         O(n)     => build a max heap out of an unsorted array (maybe not fully soring it but changing the order)
+                                   for each element in the first half of the array (starting from the mid ending in the first) call max_heapify(arr, i)
+
+swap(arr, a[i], a[n])  O(1)     => swap first and last elements (and then decrement the heap size / remove the last element)
+                                   the new root may violate the max heap property
+
+max_heapify(arr, i)    O(log n) => can only fix a single violation of a heap, left(i) or right(i), makes a recusrive call on an violations it creates
+
+
+
+
+**************************************************
+binary tree heap
+
+  min heap -> the lowest node is the root
+  
+  insert -> place the node in the next available spot (left to right)
+            if the val of the node is greater than the parent swap
+
+  remove min -> set the root to null
+                take the last inserted node and place it in the root
+                compare the parent with the childern, swap the parent with the smaller of the two
+
+**************************************************
+array heap
+
+  min heap -> the lowest node is placed at index 1
+
+  insert -> push the val and if the parent is greater than a child arr[i + 1] or arr[i + 2] swap with the smaller of the two
+
+  remove min -> shift
+
+  heapifyUp()   compare the child with the parent and swap if necessary
+  heapifyDown() compare the parent with the childern, swap the parent with the smaller of the two

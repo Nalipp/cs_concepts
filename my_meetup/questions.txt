@@ -1,0 +1,4 @@
+why does a counting sort require a range?
+why can't we use a hash to keep track of all the counts the frequencies with a hash object and then iterate the hash and returin the frequencies in order
+
+in an array of sub arrays where the sub array holds the key value pairs, can you first sort all sub arrays by value and then sort the value ties by key?

@@ -1,0 +1,10 @@
+https://stellar.mit.edu/S/course/6/sp14/6.006/schedule.html
+peak finding
+  
+  find the peak in an array
+    1. 0(n) 
+    2. O(log n) binary search
+  greedy ascent algorithm hill climbing
+    1. O(n2)
+    2. O(log n) ?
+

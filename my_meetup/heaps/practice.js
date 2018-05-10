@@ -19,20 +19,20 @@
 
 // console.log(reorganizeString(S));
 
-str = 'aabbbcc';
+str = 'aabbbbcc';
 
 function swap(arr, idx) {
   let end = arr.length - 1;
 
   while (end > idx) {
-    if (arr[end] !== arr[idx]) {
+    if (arr[end] === arr[idx]) {
+      idx--;
+    } else {
       let temp = arr[end];
       arr[end] = arr[idx];
       arr[idx] = temp;
       return arr;
     }
-
-    idx--;
   }
 
   return -1;

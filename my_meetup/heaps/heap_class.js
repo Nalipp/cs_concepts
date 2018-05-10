@@ -1,21 +1,43 @@
-let HeapClass = function(arr) {
-  this.heap = [];
+let HeapClass = function(arr=[]) {
+  this.heap = arr;
 }
 
-HeapClass.prototype.getLeftChildIndex = function(parentIndex) { return 2 * parentIndex + 1; }
-HeapClass.prototype.getRightChildIndex = function(parentIndex) { return 2 * parentIndex + 2; }
-HeapClass.prototype.getParentIndex = function(childIndex) { return Math.floor((childIndex - 1) / 2); }
+HeapClass.prototype.getLeftChildIndex = function(parentIndex) { 
+  return 2 * parentIndex + 1; 
+}
+HeapClass.prototype.getRightChildIndex = function(parentIndex) { 
+  return 2 * parentIndex + 2; 
+}
+HeapClass.prototype.getParentIndex = function(childIndex) { 
+  return Math.floor((childIndex - 1) / 2); 
+}
 
-HeapClass.prototype.hasLeftChild = function(parentIndex) { return this.getLeftChildIndex(parentIndex) < this.heap.length; }
-HeapClass.prototype.hasRightChild = function(parentIndex) { return this.getRightChildIndex(parentIndex) < this.heap.length; }
-HeapClass.prototype.hasParent = function(childIndex) { return this.parentVal(childIndex) >= 0; }
+HeapClass.prototype.hasLeftChild = function(parentIndex) { 
+  return this.getLeftChildIndex(parentIndex) < this.heap.length; 
+}
+HeapClass.prototype.hasRightChild = function(parentIndex) { 
+  return this.getRightChildIndex(parentIndex) < this.heap.length; 
+}
+HeapClass.prototype.hasParent = function(childIndex) { 
+  return this.parentVal(childIndex) >= 0; 
+}
 
-HeapClass.prototype.rightChildVal = function(parentIndex) { return this.heap[this.getRightChildIndex(parentIndex)]; }
-HeapClass.prototype.leftChildVal = function(parentIndex) { return this.heap[this.getLeftChildIndex(parentIndex)]; }
-HeapClass.prototype.parentVal = function(childIndex) { return this.heap[this.getParentIndex(childIndex)]; }
+HeapClass.prototype.rightChildVal = function(parentIndex) { 
+  return this.heap[this.getRightChildIndex(parentIndex)]; 
+}
+HeapClass.prototype.leftChildVal = function(parentIndex) { 
+  return this.heap[this.getLeftChildIndex(parentIndex)]; 
+}
+HeapClass.prototype.parentVal = function(childIndex) { 
+  return this.heap[this.getParentIndex(childIndex)]; 
+}
 
-HeapClass.prototype.peek = function() { return this.heap[0]; }
-HeapClass.prototype.getHeap = function() { return this.heap; }
+HeapClass.prototype.peek = function() { 
+  return this.heap[0]; 
+}
+HeapClass.prototype.getHeap = function() { 
+  return this.heap; 
+}
 
 HeapClass.prototype.swap = function(idx1, idx2) {
   let temp = this.heap[idx1];
@@ -25,8 +47,6 @@ HeapClass.prototype.swap = function(idx1, idx2) {
 
 HeapClass.prototype.takeMin = function() {
   let root = this.heap[0];
-
-  if (!root) throw new Error('heap is empty'); 
 
   this.swap(0, this.heap.length - 1)
   this.heap.pop();
@@ -68,14 +88,20 @@ HeapClass.prototype.insert = function(val) {
   return val;
 }
 
-HeapClass.prototype.generateHeap = function(arr=[]) {
-  for (let val of arr) {
-    this.insert(val);
+HeapClass.prototype.heapify = function() {
+  for (let i = Math.floor(this.heap.length / 2); i >= 0; i--) {
+    this.siftDown(i); 
   }
 
   return this;
 }
 
-module.exports = new HeapClass;
+module.exports = HeapClass;
 
+
+let h1 = new HeapClass([3, 16, 30, 2, 8, 6, 5, 1]);
+h1.heapify();
+
+
+console.log(h1);
 

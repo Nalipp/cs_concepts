@@ -4,12 +4,17 @@ function ListNode(val) {
 }
 
 var iterateList = function(node) {
+  // code here...
 };
 
+var l1 = new ListNode(1); 
+l1.next = new ListNode(2);
+l1.next.next = new ListNode(3);
+l1.next.next.next = new ListNode(4);
 
-var l1 = new ListNode(1);
-l1.next = new ListNode(1);
-l1.next.next = new ListNode(2);
+// Input: 1 --> 2 --> 3 --> 4 --> null
+// Print: 1, 2, 3, 4
+// Return: None
 
 iterateList(l1);
 

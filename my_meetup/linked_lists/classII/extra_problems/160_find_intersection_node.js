@@ -1,11 +1,16 @@
-// Write a program to find the node at which the intersection of two singly linked lists begins.
+// *****************************************************
+// findIntersection
+// https://repl.it/@nateplipp/linkedListfindIntersection
 
-// Input :
-// 1 - 2 - 3 - 4 - 5 \
-//                    6 - 7 - 8
-//             4 - 5 /
+//   Write a program to find the node at which the intersection of two singly linked lists begins.
 
-// Output : 6
+//   Input :
+//   1 - 2 - 3 - 4 - 5 \
+//                      6 - 7 - 8
+//               4 - 5 /
+
+//   Output : 6
+
 
 function ListNode(val) {
   this.val = val;

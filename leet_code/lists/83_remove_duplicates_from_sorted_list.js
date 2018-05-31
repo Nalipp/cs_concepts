@@ -3,16 +3,15 @@ function ListNode(val) {
   this.next = null;
 }
 
-var deleteDuplicates = function(n) {
-  if (!n) return;
-
-  if (n.next && n.val === n.next.val) {
-    n.next = n.next.next
+var deleteDuplicates = function(head) {
+  let node = head;
+  while(node) {
+    if(node.next && node.val === node.next.val) {
+        node.next = node.next.next;
+    }
+    else node = node.next;
   }
-
-  deleteDuplicates(n.next);
-
-  return n;
+  return head;
 };
 
 

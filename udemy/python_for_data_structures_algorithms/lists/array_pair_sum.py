@@ -84,6 +84,26 @@ def pair_sum4(arr, target):
     return results
 
 
+def pair_sum5(arr, target):
+    
+    if len(arr) < 2:
+        return
+    
+    seen = set()
+    output = set()
+    
+    for num in arr:
+        match = target - num
+        
+        if match not in seen:
+            seen.add(num)
+        
+        else:
+            output.add( (min(num, match),  max(num, match)) )
+
+    return output
+
+
 
 # ************************************************************
 
@@ -92,3 +112,5 @@ def pair_sum4(arr, target):
 # print(pair_sum3([1, 3, 2, 4, 0, 5], 5)) # => [[1, 4], [3, 2], [0, 5]]
 print(pair_sum4([1, 3, 2, 4, 0, 3, 5, 6], 6)) # => [[1, 5], [3, 3], [2, 4], [0, 6]]
 print(pair_sum4([1, 3, 2, 4, 0, 5, 6], 6)) # => [[1, 5], [2, 4], [0, 6]]
+# print(pair_sum5([1, 3, 2, 4, 0, 3, 5, 6], 6)) # => [[1, 5], [3, 3], [2, 4], [0, 6]]
+# print(pair_sum5([1, 3, 2, 4, 0, 5, 6], 6)) # => [[1, 5], [2, 4], [0, 6]]

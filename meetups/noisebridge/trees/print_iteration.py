@@ -1,6 +1,6 @@
 class Node:
     def __init__(self, v):
-        self.v = v
+        self.val = v
         self.c = []
 
 n1 = Node(10)
@@ -17,15 +17,15 @@ n1.c[1].c.append(Node(8))
 
 
 def print_all(node):
-    print(node.v)
+    queue = [node]
 
-    if not node.c:
-        return
+    while len(queue):
+        cur = queue.pop(0)
 
-    for child in node.c:
-        print_all(child)
+        print(cur.val)
+
+        for child in cur.c:
+            queue.append(child)
 
 
 print_all(n1)
-
-

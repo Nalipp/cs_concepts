@@ -5,7 +5,6 @@ class Node:
         self.right = None
 
 
-
 n1 = Node(12)
 n1.left = Node(8)
 n1.right = Node(14)

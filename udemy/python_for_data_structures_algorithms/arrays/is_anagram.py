@@ -92,6 +92,22 @@ def is_anagram4(str1, str2):
 # print(is_anagram3('d o g!', 'God')) # => False
 # print(is_anagram3('public relations', 'Crap Built On Lies')) # => True
 
-print(is_anagram4('d o g', 'God')) # => True
-print(is_anagram4('d o g!', 'God')) # => False
-print(is_anagram4('public relations', 'Crap Built On Lies')) # => True
+# print(is_anagram4('d o g', 'God')) # => True
+# print(is_anagram4('d o g!', 'God')) # => False
+# print(is_anagram4('public relations', 'Crap Built On Lies')) # => True
+
+from nose.tools import assert_equal
+
+class AnagramTest(object):
+    
+    def test(self,sol):
+        assert_equal(sol('go go go','gggooo'),True)
+        assert_equal(sol('abc','cba'),True)
+        assert_equal(sol('hi man','hi     man'),True)
+        assert_equal(sol('aabbcc','aabbc'),False)
+        assert_equal(sol('123','1 2'),False)
+        print("ALL TEST CASES PASSED")
+
+# Run Tests
+t = AnagramTest()
+t.test(is_anagram1)

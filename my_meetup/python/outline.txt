@@ -1,0 +1,43 @@
+lessons
+
+  0.  time and space complexity prep work
+
+  1.  strings, arrays and amoritization
+
+      lecture : 
+
+        a.  immutable strings
+              what happens when we add to the end of a string
+
+        b.  mutable arrays
+              what happens when we add to the end of an array
+
+        c.  dynamic arryas and amoritization
+
+
+      problems
+        
+        reverse_string
+        is_anagram
+        two_sum
+        largest_continuous_sum
+
+  2.  hash
+        frequency counts
+        sorting
+
+  3.  binary search
+        
+  4.  linked-lists
+
+  5.  stacks and queues
+
+        see lesson plan
+          covers amoritization again
+
+
+  6.  recursion
+
+  7.  binary search trees
+
+

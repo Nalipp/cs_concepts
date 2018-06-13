@@ -1,0 +1,11 @@
+************************************************************
+problems
+
+implement a stack using an array
+implement a stack using a linked list
+implement a queue using two stacks
+implement a queue using a linked list
+
+do parenthesis match?
+
+

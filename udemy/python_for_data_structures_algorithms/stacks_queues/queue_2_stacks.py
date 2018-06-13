@@ -16,6 +16,22 @@ class Queue2Stacks(object):
         else:
             raise Exception('can not dequeue from empty queue')
 
+
+    def peek(self):
+        if self.empty():
+            return ''
+        
+        if self.out_stack:
+            return self.out_stack[-1]
+        
+        if self.in_stack:
+            return self.in_stack[0]
+        
+
+    def empty(self):
+        return not self.in_stack and not self.out_stack
+
+
     def print_stacks(self):
         print('-------------')
         print('in_stack :', self.in_stack)
@@ -31,26 +47,4 @@ q.enqueue(3)
 
 q.print_stacks()
 
-print(q.dequeue())
-
-q.print_stacks()
-
-q.enqueue(4)
-
-q.print_stacks()
-
-print(q.dequeue())
-
-q.print_stacks()
-    
-q.enqueue(5)
-q.enqueue(6)
-
-q.print_stacks()
-
-print(q.dequeue())
-print(q.dequeue())
-print(q.dequeue())
-print(q.dequeue())
-
-q.print_stacks()
+print(q.peek())

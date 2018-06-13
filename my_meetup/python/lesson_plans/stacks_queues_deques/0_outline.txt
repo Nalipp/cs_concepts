@@ -1,0 +1,41 @@
+************************************************************
+stacks, queues
+
+
+  whiteboard
+
+    1. stacks
+       LIFO
+
+       common methods
+         push()
+         pop()
+         is_empty()
+         peek()
+         size()
+
+    2. queues
+       FIFO
+
+       common methods
+         enqueue()
+         dequeue()
+         is_empty()
+         peek()
+         size()
+
+
+    3. code a stack on the whiteboard
+
+    4. implementation analysis, stacks, queues
+         write space and time compexity next to each method
+
+         stacks -> time is O(1) space O(n)
+         queues -> how to acheive 0(1) time
+                     two stacks (amoritized)
+                     linked lists
+
+
+
+
+

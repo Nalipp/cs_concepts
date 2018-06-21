@@ -20,9 +20,6 @@ class Solution(object):
         return count
 
 
-
-
-
 s = Solution()
 
 print(s.findUnsortedSubarray([1, 3, 2, 2, 2])) # => 4 -> [3, 2, 2, 2] 

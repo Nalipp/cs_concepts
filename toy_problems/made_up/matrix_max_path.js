@@ -1,8 +1,3 @@
-var matrix = [
-  [3, 4, 5],
-  [3, 6, 8],
-  [4, 3, 7]
-]
 
 function maxPath(matrix) {
   function inner(i, j) {
@@ -19,4 +14,10 @@ function maxPath(matrix) {
   return inner(0, 0);
 }
 
-console.log(maxPath(matrix)); // 28
+var matrix = [
+  [3, 4, -5],
+  [3, -6, 8],
+  [-4, 3, 7]
+]
+
+console.log(maxPath(matrix)); // 17

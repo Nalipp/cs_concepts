@@ -5,23 +5,25 @@ class Solution(object):
 
         memo = {}
 
-        def helper(triangle, i, j):
+        def helper(i, j):
             cur_val = triangle[i][j]
 
-            if i >= len(triangle) - 1:
+            key = (i, j)
+
+            if key in memo:
+                return memo[i, j]
+
+            if i == len(triangle) - 1:
                 return cur_val
 
-            l_key = (i + 1, j)
-            if l_key not in memo:
-                memo[l_key] = cur_val + helper(triangle, i + 1, j)
+            left = helper(i + 1, j)
+            right = helper(i + 1, j + 1)
 
-            r_key = (i + 1, j + 1)
-            if r_key not in memo:
-                memo[r_key] = cur_val + helper(triangle, i + 1, j + 1)
+            memo[i, j] = cur_val + min(left, right)
 
-            return min(memo[l_key], memo[r_key])
+            return memo[i, j]
 
-        return helper(triangle, 0, 0)
+        return helper(0, 0)
 
 
 s = Solution()

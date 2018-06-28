@@ -68,8 +68,30 @@ grid5 = [
         ]
 
 s = Solution()
-# print(s.minPathSum(grid1))
-# print(s.minPathSum(grid2))
-# print(s.minPathSum(grid3))
-# print(s.minPathSum(grid4))
+print(s.minPathSum(grid1))
+print(s.minPathSum(grid2))
+print(s.minPathSum(grid3))
+print(s.minPathSum(grid4))
 print(s.minPathSum(grid5))
+
+
+
+# without memoization
+# class Solution(object):
+#     def minPathSum(self, grid):
+#         if not grid:
+#             return 0
+
+#         def inner(i, j):
+#             if j >= len(grid[0]) or i >= len(grid):
+#                 return float('inf')
+
+#             if j == len(grid[0]) - 1 and i == len(grid) - 1:
+#                 return grid[i][j]
+
+#             right = grid[i][j] + inner(i, j + 1)
+#             down = grid[i][j] + inner(i + 1, j)
+
+#             return min(right, down)
+
+#         return inner(0, 0)
